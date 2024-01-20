@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import HealthFood from "../../assets/logbg.svg";
 
 function SignUp() {
   const Navigate = useNavigate();
@@ -208,10 +209,10 @@ password:password,
       <div className="mainbody">
       <div className="left_side">
           <div className="left_logo">
-            {/* <img src={AICTE} alt="AICTE"/> */}
+            <img src={HealthFood} alt="Healthy"/>
           </div>
           <div className="left_cont">
-          <span id="welcome">Welcome </span> to the AICTE SAHAYAK portal
+          <span id="welcome">Welcome </span> to the HealthOS
           </div>
         </div>
         <div className="right_side">
@@ -282,9 +283,9 @@ password:password,
                     //   /^[a-zA-Z]{2,20}22\d{5,7}@akgec\.ac\.in$/gm;
                     // seterremail(!emailpattern.test(e.target.value));
                   }}
-                  InputProps={{ style: { color: 'white' },
-                  classes: { notchedOutline: 'white-border' }, }}
-                  InputLabelProps={{ style: { color: 'white' } }}
+                  InputProps={{ style: { color: 'black' },
+                  classes: { notchedOutline: 'black-border' }, }}
+                  InputLabelProps={{ style: { color: 'black' } }}
                 />
               </Box>
               <Box
@@ -327,8 +328,8 @@ password:password,
                       /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
                     seterremail(!emailpattern.test(e.target.value));
                   }}
-                  InputProps={{ style: { color: 'white' }, classes: { notchedOutline: erremail ? 'red-border' : 'white-border' },  }}
-                  InputLabelProps={{ style: { color: 'white' } }}
+                  InputProps={{ style: { color: 'black' }, classes: { notchedOutline: erremail ? 'red-border' : 'black-border' },  }}
+                  InputLabelProps={{ style: { color: 'black' } }}
                 />
               </Box>
               <Box
@@ -371,8 +372,8 @@ password:password,
                       /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
                     seterrPass(!passpattern.test(e.target.value));
                   }}
-                  InputProps={{ style: { color: 'white' }, classes: { notchedOutline: errpass ? 'red-border' : 'white-border' },  }}
-                  InputLabelProps={{ style: { color: 'white' } }}
+                  InputProps={{ style: { color: 'black' }, classes: { notchedOutline: errpass ? 'red-border' : 'black-border' },  }}
+                  InputLabelProps={{ style: { color: 'black' } }}
                 />
               </Box>
               <div className="sub_btn_log">
@@ -382,7 +383,7 @@ password:password,
               </button>
               </div>
               <div className="bott_text">
-                <p>Already registered?</p>
+                <p>Already have an account?</p>
                 <Link to="/login" id="bottnav">Login</Link>
               </div>
             </>

@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import HealthFood from "../../assets/logbg.svg"
 
 function Login() {
   const Navigate = useNavigate();
@@ -96,10 +97,10 @@ function Login() {
       <div className="mainbody">
         <div className="left_side">
           <div className="left_logo">
-            {/* <img src={AICTE} alt="AICTE"/> */}
+          <img src={HealthFood} alt="Healthy"/>
           </div>
           <div className="left_cont">
-          <span id="welcome">Welcome </span> to the AICTE SAHAYAK portal
+          <span id="welcome">Welcome </span> to the HealthOS
           </div>
         </div>
         <div className="right_side">
@@ -147,10 +148,12 @@ function Login() {
                   // seterrPass(!passpattern.test(e.target.value));
                 }}
                 InputProps={{
-                  style: { color: "white" },
-                  classes: { notchedOutline: "white-border" },
+                  style: { color: "black" },
+                  classes: {
+                    notchedOutline: erremail ? "red-border" : "black-border",
+                  },
                 }}
-                InputLabelProps={{ style: { color: "white" } }}
+                InputLabelProps={{ style: { color: "black" } }}
               />
                 
             </Box>
@@ -195,16 +198,16 @@ function Login() {
                   // seterrPass(!passpattern.test(e.target.value));
                 }}
                 InputProps={{
-                  style: { color: "white" },
-                  classes: { notchedOutline: "white-border" },
+                  style: { color: "black" },
+                  classes: { notchedOutline: "black-border" },
                 }}
-                InputLabelProps={{ style: { color: "white" } }}
+                InputLabelProps={{ style: { color: "black" } }}
               />
             </Box>
             <div className="forgot_text">
-              <Link to="/forgotpassword" id="fglink">
+              {/* <Link to="/forgotpassword" id="fglink">
                 Forgot Password?
-              </Link>
+              </Link> */}
             </div>
             <div className="sub_btn_log">
               <button type="submit" disabled={loading} onClick={handleSubmit}>
@@ -212,9 +215,9 @@ function Login() {
               </button>
             </div>
             <div className="bott_text">
-              <p>Don't have account?</p>
+              <p>Don't have an account?</p>
               <Link to="/signup" id="bottnav">
-                New Institute
+                Create Account
               </Link>
             </div>
           </div>
