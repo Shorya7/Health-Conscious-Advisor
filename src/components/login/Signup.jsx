@@ -59,7 +59,7 @@ function SignUp() {
         })
         .then((result) => {
           emailresp = result.status;
-          token = result.data.token;
+          // token = result.data.token;
           if (emailresp === 200) {
             showOTP(true);
             toast.success(`${result.data.msg}`, {
@@ -73,7 +73,9 @@ function SignUp() {
               theme: "dark",
             });
             // console.log(token)
-            localStorage.setItem("token", token);
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
           } else {
             showToast(`${result.data.msg}`);
           }
@@ -98,25 +100,26 @@ function SignUp() {
   var otpresp;
   const handleOtp = () => {
     console.log(otp);
-    if (otp.length !== 4) showToast(`Enter correct OTP`);
+    if (otp.length !== 6) showToast(`Enter correct OTP`);
     else {
-      const token = localStorage.getItem("token");
+      const email = localStorage.getItem("email");
+      const username  = localStorage.getItem("username");
+      const password = localStorage.getItem("password");
       setLoading2(true);
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
+      
       axios
         .post(
           "https://bennett.onrender.com/api/verify",
           {
-            // email: email,
+            email: email,
+username:username,
+password:password,
             otp: otp,
           },
-          { headers }
         )
         .then((result) => {
           otpresp = result.status;
-          if (otpresp === 200 && result.data.success === true) {
+          if (otpresp === 200) {
             toast.success(`${result.data.msg}`, {
               position: "top-right",
               autoClose: 4000,
@@ -129,7 +132,6 @@ function SignUp() {
             });
             // localStorage.setItem("token", result.data.token);
             // localStorage.setItem("login", true);
-            localStorage.setItem("email", email);
             console.log(result)
             showOTP(false);
           } else {
@@ -224,7 +226,7 @@ function SignUp() {
                 value={otp}
                 onChange={setOtp}
                 autoFocus
-                OTPLength={4}
+                OTPLength={6}
                 otpType="number"
                 disabled={false}
                 className="otp-input "
