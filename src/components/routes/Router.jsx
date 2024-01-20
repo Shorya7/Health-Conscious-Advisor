@@ -7,7 +7,7 @@ import Navbar from "../navbar/Navbar"
 import Footer from '../footer/Footer'
 import ProtectedRoute from './ProtectedRoutes'
 import Home from '../home/Home'
-import Uploads from '../upload/Uploads'
+// import Uploads from '../upload/Uploads'
 import Response from '../response/Response'
 
 const Routers = () => {
@@ -21,7 +21,7 @@ const Routers = () => {
       <Route path='/' element = {<><Navbar/><ProtectedRoute Component={Home} /><Footer /></>} />
       <Route path='/signup' element = {<SignUp />}/>
       <Route path='/login' element = {<Login />}/>
-      <Route path='/upload' element = {<Uploads />}/>
+      {/* <Route path='/upload' element = {<Uploads />}/> */}
       <Route path='/response_diet' element = {<Response/>}/>
       <Route path='*' element = {<Errorpage />} />
     </Routes>
