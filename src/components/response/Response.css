@@ -1,8 +1,9 @@
 .diet_main{
     background-image: url("../../assets/back11.svg");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    /* background-size: cover; */
+    background-size: contain;
+    background-position: top;
 }
 .diet_heading{
     display: flex;
@@ -12,7 +13,8 @@
     background-image: url('../../assets/nav12.svg');
     /* background-repeat: no-repeat; */
     background-position: center;
-    
+    position: sticky;
+    top: 0;
     /* background-size: 70%;background-size: cover; */
     height: 119px;
 }
@@ -43,6 +45,7 @@ display: flex;
 font-size: 20px;
 align-items: center ;
 justify-content: center;
+text-align: center;
 }
 .diet_content_main{
     display: flex;
