@@ -10,7 +10,7 @@ import HealthFood from "../../assets/logbg.svg"
 
 function Login() {
   const Navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const[username,setUsername]=useState("");
   const [password, setPassword] = useState("");
   //   const [errpass, seterrPass] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,26 +35,22 @@ function Login() {
   let token;
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (email.match(emailpattern)) seterremail(false);
+    // if (email.match(emailpattern)) seterremail(false);
     // if (password.match(passpattern)) seterrPass(false);
-    if (email.length === 0 || password.length === 0) {
+    if (username.length === 0 || password.length === 0) {
       showToast("Please Fill all the Entries");
-    } else if (!email.match(emailpattern)) {
-      seterremail(true);
-      showToast("Please Enter a Valid Email");
     } else {
       setLoading(true);
       axios
-        .post(" https://bennett.onrender.com/api/login", {
-          // email: email,
-          username:"kushwahapraveen0507@gmail.com",
-          password: "Praveen@1234",
+        .post("https://bennett.onrender.com/api/login", {
+          username:username,
+          password: password,
           rememberMe:"true"
         })
         .then((result) => {
           emailresp = result.status;
           token = result.data.token;
-          if (emailresp === 200 && result.data.success === true) {
+          if (emailresp === 200 && result.data.status === true) {
             toast.success(`${result.data.msg}`, {
               position: "top-right",
               autoClose: 4000,
@@ -65,8 +61,6 @@ function Login() {
               progress: undefined,
               theme: "dark",
             });
-            // console.log(token)
-            localStorage.setItem("token", token);
             localStorage.setItem("login", true);
           } else {
             showToast(`${result.data.msg}`);
@@ -140,18 +134,18 @@ function Login() {
               <TextField
                 required
                 // id="standard-required"
-                label="Email"
+                label="Username"
                 variant="outlined"
-                type="email"
-                error={erremail}
-                helperText={erremail ? "Enter Correct Email" : ""}
-                value={email}
+                type="name"
+                //   error={errpass}
+                //   helperText={errpass ? "Your password is weak" : ""}
+                value={username}
                 onChange={(e) => {
-                  setEmail(e.target.value.toLowerCase());
+                  setUsername(e.target.value);
 
-                  const emailpattern =
-                    /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                  seterremail(!emailpattern.test(e.target.value));
+                  // const passpattern =
+                  // /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+                  // seterrPass(!passpattern.test(e.target.value));
                 }}
                 InputProps={{
                   style: { color: "black" },
@@ -161,6 +155,7 @@ function Login() {
                 }}
                 InputLabelProps={{ style: { color: "black" } }}
               />
+                
             </Box>
             <Box
               component="form"

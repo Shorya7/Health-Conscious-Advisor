@@ -1,0 +1,43 @@
+.diet_main{
+    background-image: url("../../assets/back11.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.diet_heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #DFEEC6; */
+    background-image: url('../../assets/nav12.svg');
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    
+    /* background-size: 70%;background-size: cover; */
+    height: 119px;
+}
+.diet_heading h1{
+    font-size: 40px;
+}
+.left_diet,.right_diet{
+    width: 45%;
+    margin: 20px;
+    /* background-color: #eff3ea; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.diet_result_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.diet_content{
+background-color: #FEEFC3;
+border-radius: 20px;
+padding: 10px;
+margin:10px;
+width: 60%;
+height: 80px;
+}
