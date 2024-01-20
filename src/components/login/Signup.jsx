@@ -101,7 +101,7 @@ function SignUp() {
   var otpresp;
   const handleOtp = () => {
     console.log(otp);
-    if (otp.length !== 6) showToast(`Enter correct OTP`);
+    if (otp.length !== 4) showToast(`Enter correct OTP`);
     else {
       const email = localStorage.getItem("email");
       const username  = localStorage.getItem("username");
@@ -132,12 +132,13 @@ password:password,
               theme: "dark",
             });
             // localStorage.setItem("token", result.data.token);
-            // localStorage.setItem("login", true);
+            localStorage.setItem("login", true);
             console.log(result)
+            Navigate('/')
+            
             showOTP(false);
-          } else {
-            showToast(`${result.data.msg}`);
           }
+          
           setLoading2(false);
           console.log(result);
         })
@@ -227,7 +228,7 @@ password:password,
                 value={otp}
                 onChange={setOtp}
                 autoFocus
-                OTPLength={6}
+                OTPLength={4}
                 otpType="number"
                 disabled={false}
                 className="otp-input "

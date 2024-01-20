@@ -55,7 +55,7 @@ const Footer = () => {
                 Services
               </h6>
               <p><Link to="/enquiry" className="text-reset">Scan a Menu</Link></p>
-  <p><Link to="/chat" className="text-reset">Chat with AI</Link></p>
+  <p><Link to="/chat" className="text-reset">HealthBot</Link></p>
   <p><Link to="/doct/details" className="text-reset">Know your Diet</Link></p>
   {/* <p><Link to="/support" className="text-reset">Support</Link></p>
   <p><Link to="/chat-history" className="text-reset">Chat History</Link></p> */}
