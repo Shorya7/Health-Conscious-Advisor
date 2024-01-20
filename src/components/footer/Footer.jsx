@@ -69,9 +69,9 @@ const Footer = () => {
                 Useful links
               </h6>
               <p><a href="https://www.nih.gov/" target="_blank" rel="noreferrer" className="text-reset">NIH</a></p>
-              <p><a href="https://facilities.aicte-india.org/dashboard/pages/angulardashboard.php#!/approved" target="_blank" rel="noreferrer"className="text-reset">Verify Institute Approval</a></p>
-              <p><a href="https://www.aicte-india.org/bureaus/approval/attachments" target="_blank" rel="noreferrer"className="text-reset">Attachments</a></p>
-              <p><a href="https://www.aicte-india.org/sites/default/files/approval/2023-24/APH%202023%20-%2024.pdf" target="_blank" rel="noreferrer"className="text-reset">Approval Process Handbook</a></p>
+              <p><a href="https://planmeal.com/indian-food-table" target="_blank" rel="noreferrer"className="text-reset">Meal Planner</a></p>
+              <p><a href="https://upsidehealth.in/" target="_blank" rel="noreferrer"className="text-reset">Upside Health</a></p>
+              
             </div>
             {/* Grid column */}
             
@@ -93,7 +93,7 @@ const Footer = () => {
       
       {/* Copyright */}
       <div className="text-center p-4" style={{color:"black", backgroundColor: '#d5efad', fontFamily: 'Inter, sans-serif' }}>
-        © 2024 Copyright:
+        © 2024 Copyright: 
         <a className="text-reset fw-bold" href="https://whereuelevate.com/drills/bennett-university-industry-hackathon" target="_blank" rel="noreferrer" style={linkStyle}>
           Coded Minds @IndustryHackathon
         </a>
