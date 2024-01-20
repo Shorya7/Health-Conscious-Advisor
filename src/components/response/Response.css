@@ -30,8 +30,7 @@
 }
 .diet_result_div{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;    justify-content: center;
 }
 .diet_content{
 background-color: #FEEFC3;
@@ -40,4 +39,14 @@ padding: 10px;
 margin:10px;
 width: 60%;
 height: 80px;
+display: flex;
+font-size: 20px;
+align-items: center ;
+justify-content: center;
+}
+.diet_content_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }

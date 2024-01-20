@@ -5,12 +5,13 @@ function Response() {
     const retrievedHealthy = JSON.parse(localStorage.getItem("healthyItems")) || [];
 const retrievedUnhealthy = JSON.parse(localStorage.getItem("unhealthyItems")) || [];
 
-function renderItemsInDiv(items, title) {
+function renderItemsInDiv(items) {
     return (
-      <div className="diet_content">
-        <b>{title}</b><br />
+      <div className="diet_content_main">
         {items.map((item, index) => (
-          <span key={index}>{item}<br /></span>
+          <div className="diet_content" key={index}>
+            <b>{item}</b><br />
+          </div>
         ))}
       </div>
     );
@@ -25,9 +26,9 @@ function renderItemsInDiv(items, title) {
         </div>
         <div className="diet_result_div">
           <div className="left_diet">
-          {renderItemsInDiv(retrievedHealthy, "Healthy Items")}  </div>
+          {renderItemsInDiv(retrievedHealthy)}  </div>
           <div className="right_diet">
-          {renderItemsInDiv(retrievedUnhealthy, "Unhealthy Items")}
+          {renderItemsInDiv(retrievedUnhealthy)}
    </div>
         </div>
       </div>

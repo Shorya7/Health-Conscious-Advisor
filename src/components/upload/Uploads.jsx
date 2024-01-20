@@ -98,21 +98,19 @@ for (let i = 0; i < responseArray.length; i++) {
 }
 
 console.log(m, n);
-const healthy=[];
-const unhealthy=[];
-// Corrected syntax in the second for loop
+const healthy = [];
+const unhealthy = [];
 for (let temp = m + 2; temp < n - 1; temp++) {
-  healthy.push(responseArray[temp]);
+  // Remove the "-" character at the beginning
+  healthy.push(responseArray[temp].substring(2));
 }
 for (let temp = n + 2; temp < responseArray.length; temp++) {
-  unhealthy.push(responseArray[temp]);
+  // Remove the "-" character at the beginning
+  unhealthy.push(responseArray[temp].substring(2));
 }
 console.log(healthy, unhealthy);
-
-// Assuming you have the arrays: healthy and unhealthy
 localStorage.setItem("healthyItems", JSON.stringify(healthy));
 localStorage.setItem("unhealthyItems", JSON.stringify(unhealthy));
-
 
 function handleSubmit(){
   var token = localStorage.getItem("token");
